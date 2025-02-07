@@ -1,11 +1,10 @@
 package ysj.hellospring;
 
+import jakarta.persistence.EntityManager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ysj.hellospring.repository.JdbcMemberRepository;
-import ysj.hellospring.repository.JdbcTemplateMemberRepository;
-import ysj.hellospring.repository.MemberRepository;
-import ysj.hellospring.repository.MemoryMemberRepository;
+import ysj.hellospring.repository.*;
 import ysj.hellospring.service.MemberService;
 
 import javax.sql.DataSource;
@@ -13,10 +12,11 @@ import javax.sql.DataSource;
 @Configuration
 public class SpringConfig {
 
-    private final DataSource dataSource;
+    private EntityManager em;
 
-    public SpringConfig(DataSource dataSource) {
-        this.dataSource = dataSource;
+    @Autowired
+    public SpringConfig(EntityManager em) {
+        this.em = em;
     }
 
     @Bean
@@ -26,6 +26,6 @@ public class SpringConfig {
 
     @Bean
     public MemberRepository memberRepository() {
-        return new JdbcTemplateMemberRepository(dataSource);
+        return new JpaMemberRepository(em);
     }
 }
