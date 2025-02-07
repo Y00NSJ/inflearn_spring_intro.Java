@@ -6,11 +6,11 @@
       <GradleProjectSettings>
         <option name="delegatedBuild" value="false" />
         <option name="testRunner" value="PLATFORM" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/스프링 입문/hello-spring" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/inflearn_spring_intro.Java/hello-spring" />
         <option name="gradleJvm" value="21" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/스프링 입문/hello-spring" />
+            <option value="$PROJECT_DIR$/inflearn_spring_intro.Java/hello-spring" />
           </set>
         </option>
       </GradleProjectSettings>
