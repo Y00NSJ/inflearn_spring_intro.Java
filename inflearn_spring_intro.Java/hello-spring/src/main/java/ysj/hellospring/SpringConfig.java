@@ -4,6 +4,7 @@ import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import ysj.hellospring.aop.TimeTraceAop;
 import ysj.hellospring.repository.*;
 import ysj.hellospring.service.MemberService;
 
@@ -22,5 +23,8 @@ public class SpringConfig {
         return new MemberService(memberRepository);
     }
 
-
+    @Bean
+    public TimeTraceAop TimeTraceAop() {
+        return new TimeTraceAop();
+    }
 }
